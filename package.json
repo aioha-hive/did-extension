@@ -1,0 +1,57 @@
+{
+  "name": "@aioha/did-extension",
+  "version": "0.1.0",
+  "description": "Aioha DID extension",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "webpack": "webpack",
+    "clean": "rm -r dist/* build/*",
+    "prepublish": "pnpm run clean; pnpm run build; pnpm run webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aioha",
+    "did",
+    "hive",
+    "blockchain",
+    "authentication"
+  ],
+  "author": "techcoderx",
+  "license": "MIT",
+  "homepage": "https://aioha.dev",
+  "repository": {
+    "url": "https://github.com/aioha-hive/did-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/aioha-hive/did-extension/issues"
+  },
+  "files": [
+    "src",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@aioha/aioha": "^1.5.3",
+    "buffer": "^6.0.3",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "peerDependencies": {
+    "@aioha/aioha": "^1.5.3"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.4.0",
+    "@noble/secp256k1": "^2.1.0",
+    "bs58": "^6.0.0",
+    "did-jwt": "^8.0.4",
+    "dids": "^5.0.2",
+    "fast-json-stable-stringify": "^2.1.0",
+    "rpc-utils": "^0.6.2",
+    "uint8arrays": "^5.1.0"
+  }
+}
