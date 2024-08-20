@@ -35,7 +35,7 @@
     "README.md"
   ],
   "devDependencies": {
-    "@aioha/aioha": "^1.5.3",
+    "@aioha/aioha": "^1.5.4",
     "buffer": "^6.0.3",
     "ts-loader": "^9.5.1",
     "webpack": "^5.93.0",

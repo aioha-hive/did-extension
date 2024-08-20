@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@aioha/aioha':
-    specifier: ^1.5.3
-    version: 1.5.3
+    specifier: ^1.5.4
+    version: 1.5.4
   buffer:
     specifier: ^6.0.3
     version: 6.0.3
@@ -53,8 +53,8 @@ packages:
     resolution: {integrity: sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==}
     dev: false
 
-  /@aioha/aioha@1.5.3:
-    resolution: {integrity: sha512-ogu21fFQAcdCVPZv2QyPs3NLo9ooPGyTHVqf+/FC/5kEI1Ukq7QjFQ5MrdYYU+Yv7lD/xqdrt37ZJ0KKtUbkVw==}
+  /@aioha/aioha@1.5.4:
+    resolution: {integrity: sha512-AmRrPb230KI+Ovt1w5MAro7AviBtlMZk/PAakVDtK8BKsRTanaM87dLq+5v+KcVvqJuQTzY2CSRKG4WH2Xhvtw==}
     dependencies:
       '@engrave/ledger-app-hive': 3.5.6
       '@hiveio/dhive': 1.3.0
@@ -602,8 +602,8 @@ packages:
       - debug
     dev: true
 
-  /axios@1.7.3:
-    resolution: {integrity: sha512-Ar7ND9pU99eJ9GpoGQKhKf58GpUOgnzuaB7ueNQ5BMi0p+LZ5oaEnfF999fAArcTIBwXTCHAmGcHOZJaWPq9Nw==}
+  /axios@1.7.4:
+    resolution: {integrity: sha512-DukmaFRnY6AzAALSH4J2M3k6PkaC+MfaAGdEERRWcC9q3/TWQwLpHR8ZRLKTdQ3aBDL64EdluRDjJqKw+BPZEw==}
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
@@ -983,8 +983,8 @@ packages:
     resolution: {integrity: sha512-C3RDERDjrNW262GCRvpoer3a0Ksd66CtgDLxMHhzShQ8fhL4kwnpVXsJPAKg9xJjIROXUbLBrvtOzVAjALMIWA==}
     dev: true
 
-  /elliptic@6.5.6:
-    resolution: {integrity: sha512-mpzdtpeCLuS3BmE3pO3Cpp5bbjlOPY2Q0PgoF+Od1XZrHLYI28Xe3ossCmYCQt11FQKEYd9+PF8jymTvtWJSHQ==}
+  /elliptic@6.5.7:
+    resolution: {integrity: sha512-ESVCtTwiA+XhY3wyh24QqRGBoP3rEdDUl3EDUUo9tft074fi19IrdpH7hLCMMP3CIj7jb3W96rn8lt/BqIlt5Q==}
     dependencies:
       bn.js: 4.12.0
       brorand: 1.1.0
@@ -1173,13 +1173,13 @@ packages:
       function-bind: 1.1.2
     dev: true
 
-  /hive-keychain-commons@1.2.6:
-    resolution: {integrity: sha512-0ogiU2X0KUouM05fJ13a/W4HivSd8VM8GTy7YQSKuHcGuId0fDKoDlpLzIUG4kh5cur88COLcuL9RnJ4dPHiaA==}
+  /hive-keychain-commons@1.3.2:
+    resolution: {integrity: sha512-8XJmLrhJqWxbr6iz1C0nRWvlvVR92m1Uoo5a9eX+hr41tEAF8T5MekcaNXPDfJpjj6lBLsLfivH7yskA9zyiZQ==}
     dependencies:
       '@hiveio/dhive': 1.3.0
       moment: 2.30.1
-      winston: 3.14.1
-      winston-daily-rotate-file: 4.7.1(winston@3.14.1)
+      winston: 3.14.2
+      winston-daily-rotate-file: 4.7.1(winston@3.14.2)
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -1301,8 +1301,8 @@ packages:
     resolution: {integrity: sha512-UnfI7bwq0fajh1TcBNlzwzvVEqbGEVgT+a3segyzwFe8U7K58jkt6/DZ5TDvXYgraAy9xpl4skcMiyRFpwYQxA==}
     dependencies:
       '@types/node': 18.19.44
-      axios: 1.7.3
-      hive-keychain-commons: 1.2.6
+      axios: 1.7.4
+      hive-keychain-commons: 1.3.2
       uuid: 9.0.1
     transitivePeerDependencies:
       - debug
@@ -1609,7 +1609,7 @@ packages:
       bn.js: 4.12.0
       create-hash: 1.2.0
       drbg.js: 1.0.1
-      elliptic: 6.5.6
+      elliptic: 6.5.7
       nan: 2.20.0
       safe-buffer: 5.2.1
     dev: true
@@ -1991,7 +1991,7 @@ packages:
     resolution: {integrity: sha512-CC1bOL87PIWSBhDcTrdeLo6eGT7mCFtrg0uIJtqJUFyK+eJnzl8A1niH56uu7KMa5XFrtiV+AQuHO3n7DsHnLQ==}
     dev: true
 
-  /winston-daily-rotate-file@4.7.1(winston@3.14.1):
+  /winston-daily-rotate-file@4.7.1(winston@3.14.2):
     resolution: {integrity: sha512-7LGPiYGBPNyGHLn9z33i96zx/bd71pjBn9tqQzO3I4Tayv94WPmBNwKC7CO1wPHdP9uvu+Md/1nr6VSH9h0iaA==}
     engines: {node: '>=8'}
     peerDependencies:
@@ -2000,7 +2000,7 @@ packages:
       file-stream-rotator: 0.6.1
       object-hash: 2.2.0
       triple-beam: 1.4.1
-      winston: 3.14.1
+      winston: 3.14.2
       winston-transport: 4.7.1
     dev: true
 
@@ -2013,8 +2013,8 @@ packages:
       triple-beam: 1.4.1
     dev: true
 
-  /winston@3.14.1:
-    resolution: {integrity: sha512-CJi4Il/msz8HkdDfXOMu+r5Au/oyEjFiOZzbX2d23hRLY0narGjqfE5lFlrT5hfYJhPtM8b85/GNFsxIML/RVA==}
+  /winston@3.14.2:
+    resolution: {integrity: sha512-CO8cdpBB2yqzEf8v895L+GNKYJiEq8eKlHU38af3snQBQ+sdAIUepjMSguOIJC7ICbzm0ZI+Af2If4vIJrtmOg==}
     engines: {node: '>= 12.0.0'}
     dependencies:
       '@colors/colors': 1.6.0
