@@ -12,7 +12,8 @@ import * as u8a from 'uint8arrays'
 import { sha256 as sha256Hash } from '@noble/hashes/sha256'
 import { Signature } from '@noble/secp256k1'
 import type { AiohaOperations } from '@aioha/aioha/build/providers/provider.js'
-import { Aioha, Providers, KeyTypes } from '@aioha/aioha'
+import type { Aioha } from '@aioha/aioha'
+import { Providers, KeyTypes } from '@aioha/aioha/build/types.js'
 import { AiohaRpcError } from '@aioha/aioha/build/jsonrpc/eip1193-types.js'
 import { Context, DIDHiveKeyAuth, AccountKeyAuthResult, Defaults } from './types.js'
 import { toJose, leftpad } from './utils.js'
@@ -91,11 +92,11 @@ const AiohaSigner = (aioha: AiohaOperations, keyType: KeyTypes, recoverable = fa
 
 const sign = async (
   payload: Record<string, any> | string,
-  aioha: Aioha,
+  aioha: AiohaOperations,
   keyType: KeyTypes,
+  did: string,
   protectedHeader: Record<string, any> = {}
 ) => {
-  const did = encodeDIDFromPub(aioha.getPublicKey()!)
   const kid = `${did}#${did.split(':')[2]}`
   const signer = AiohaSigner(aioha, keyType)
   const header = toStableObject(Object.assign(protectedHeader, { kid, alg: 'ES256K' }))
@@ -104,8 +105,8 @@ const sign = async (
 }
 
 const didMethods = {
-  did_authenticate: async ({ aioha, keyType }: Context, params: AuthParams) => {
-    const pub = aioha.getPublicKey()
+  did_authenticate: async ({ aioha, keyType, defaultPub }: Context, params: AuthParams) => {
+    let pub = aioha.getPublicKey() || defaultPub
     if (!pub) throw new AiohaRpcError(4100, 'could not retrieve DID due to no public key')
     const did = encodeDIDFromPub(pub)
     // TODO: Call Aioha login()
@@ -118,7 +119,8 @@ const didMethods = {
         exp: Math.floor(Date.now() / 1000) + 600 // expires 10 min from now
       },
       aioha,
-      keyType
+      keyType,
+      did
     )
     return toGeneralJWS(response)
   },
@@ -128,7 +130,7 @@ const didMethods = {
     const did = encodeDIDFromPub(pub)
     const requestDid = params.did.split('#')[0]
     if (requestDid !== did) throw new AiohaRpcError(4100, `Unknown DID: ${did}`)
-    const jws = await sign(params.payload, aioha, keyType, params.protected)
+    const jws = await sign(params.payload, aioha, keyType, did, params.protected)
     return { jws: toGeneralJWS(jws) }
   },
   did_decryptJWE: async () => {
